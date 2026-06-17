@@ -28,9 +28,12 @@ insurance-portal/
 
 Run Backend
 Go to backend folder:
-cd backend
+cd Backend
+cd insurance-backend
+
 Run Spring Boot:
-mvn spring-boot:run
+mvnw.cmd spring-boot:run
+
 Backend runs at:
 http://localhost:8080
 Test API:
@@ -38,7 +41,7 @@ http://localhost:8080/api/plans
 
 
 Run Frontend
-cd frontend
+cd Frontend
 npm install
 ng serve
 Frontend runs at:
