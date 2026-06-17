@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.angular/
+target/
+*.class
+*.db
+*.db-journal
+.vscode/
+.DS_Store
+Thumbs.db
