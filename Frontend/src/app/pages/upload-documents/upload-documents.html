@@ -1,0 +1,32 @@
+<div class="card">
+  <h1>Upload Vehicle Documents</h1>
+
+  <label>Vehicle Number</label>
+  <input [(ngModel)]="documentData.vehicleNumber" placeholder="Example: KA01AB1234">
+
+  <label>Document Type</label>
+  <select [(ngModel)]="documentData.documentType">
+    <option>RC Book</option>
+    <option>Driving License</option>
+    <option>Previous Insurance</option>
+    <option>Pollution Certificate</option>
+  </select>
+
+  <label>Select File</label>
+  <input type="file" (change)="onFileSelected($event)">
+
+  <button (click)="uploadDocument()">Upload Document</button>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
+
+<div class="card" *ngIf="savedDocument">
+  <h2>Uploaded Document</h2>
+
+  <p><strong>Document ID:</strong> {{ savedDocument.id }}</p>
+  <p><strong>Vehicle Number:</strong> {{ savedDocument.vehicleNumber }}</p>
+  <p><strong>Type:</strong> {{ savedDocument.documentType }}</p>
+  <p><strong>File Name:</strong> {{ savedDocument.fileName }}</p>
+  <p><strong>Status:</strong> {{ savedDocument.status }}</p>
+  <p><strong>Uploaded At:</strong> {{ savedDocument.uploadedAt }}</p>
+</div>

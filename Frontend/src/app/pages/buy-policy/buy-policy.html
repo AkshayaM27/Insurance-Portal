@@ -1,0 +1,37 @@
+<p>buy-policy works!</p>
+<div class="card">
+  <h1>Buy Insurance Policy</h1>
+
+  <label>Full Name</label>
+  <input [(ngModel)]="policy.fullName" placeholder="Enter full name">
+
+  <label>Email</label>
+  <input type="email" [(ngModel)]="policy.email" placeholder="Enter email">
+
+  <label>Vehicle Number</label>
+  <input [(ngModel)]="policy.vehicleNumber" placeholder="Example: KA01AB1234">
+
+  <label>Select Plan</label>
+  <select [(ngModel)]="policy.planName">
+    <option *ngFor="let plan of plans" [value]="plan.name">
+      {{ plan.name }} - ₹{{ plan.price }}
+    </option>
+  </select>
+
+  <button (click)="buyPolicy()">Buy Policy</button>
+
+  <p class="message" *ngIf="message">{{ message }}</p>
+</div>
+
+<div class="card" *ngIf="savedPolicy">
+  <h2>Policy Details</h2>
+
+  <p><strong>Policy ID:</strong> {{ savedPolicy.id }}</p>
+  <p><strong>Name:</strong> {{ savedPolicy.fullName }}</p>
+  <p><strong>Email:</strong> {{ savedPolicy.email }}</p>
+  <p><strong>Vehicle Number:</strong> {{ savedPolicy.vehicleNumber }}</p>
+  <p><strong>Plan:</strong> {{ savedPolicy.planName }}</p>
+  <p><strong>Status:</strong> {{ savedPolicy.status }}</p>
+  <p><strong>Start Date:</strong> {{ savedPolicy.startDate }}</p>
+  <p><strong>Expiry Date:</strong> {{ savedPolicy.expiryDate }}</p>
+</div>

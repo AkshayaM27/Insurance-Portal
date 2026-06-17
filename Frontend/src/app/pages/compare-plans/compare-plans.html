@@ -1,0 +1,13 @@
+<h1>Compare Insurance Plans</h1>
+
+<p class="message" *ngIf="message">{{ message }}</p>
+
+<div class="grid" *ngIf="plans.length > 0">
+  <div class="card" *ngFor="let plan of plans">
+    <h2>{{ plan.name }}</h2>
+    <p><strong>Price:</strong> ₹{{ plan.price }}</p>
+    <p><strong>Coverage:</strong> {{ plan.coverage }}</p>
+    <p><strong>Benefits:</strong> {{ plan.benefits }}</p>
+    <button type="button" routerLink="/buy-policy">Buy This Plan</button>
+  </div>
+</div>

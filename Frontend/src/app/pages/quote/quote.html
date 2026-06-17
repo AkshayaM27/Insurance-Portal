@@ -1,0 +1,21 @@
+<div class="card">
+  <h1>Get Insurance Quote</h1>
+
+  <label>Car Model</label>
+  <input [(ngModel)]="carModel" placeholder="Example: Hyundai i20">
+
+  <label>Car Value</label>
+  <input type="number" [(ngModel)]="carValue" placeholder="Example: 600000">
+
+  <label>Car Age</label>
+  <input type="number" [(ngModel)]="carAge" placeholder="Example: 3">
+
+  <button (click)="getQuote()">Calculate Quote</button>
+
+  <div class="result-box" *ngIf="quote">
+    <h2>Quote Generated</h2>
+    <p><strong>Car:</strong> {{ quote.carModel }}</p>
+    <p><strong>Premium Amount:</strong> ₹{{ quote.premiumAmount }}</p>
+    <p><strong>Quote ID:</strong> {{ quote.id }}</p>
+  </div>
+</div>
